@@ -2,15 +2,20 @@
 
 ImageCompressor is a Haskell project that utilizes clustering (k-means algorithm) to compress an image. Instead of reading from a file, the input for the project should follow the specified grammar:
 
+## File Format
+
 **Input Format:**
 
+```
 IN ::= POINT ' ' COLOR ('\n' POINT ' ' COLOR ) *
 POINT ::= '(' int ',' int ')'
 COLOR ::= '(' SHORT ',' SHORT ',' SHORT ')'
 SHORT ::= '0 '.. '255 '
+```
 
 For example:
 
+```
 (0,0) (33,18,109)
 (0,1) (33,18,109)
 (0,2) (33,21,109)
@@ -21,17 +26,21 @@ For example:
 (1,1) (35,18,109)
 (1,2) (35,21,109)
 (1,3) (38,21,112)
+```
 
 **Output Format:**
 
+```
 OUT ::= CLUSTER *
 CLUSTER ::= '- -\n' COLOR '\n -\n' ( POINT ' ' COLOR '\n ' ) *
 POINT ::= '(' int ',' int ')'
 COLOR ::= '(' SHORT ',' SHORT ',' SHORT ')'
 SHORT ::= '0 '.. '255 '
+```
 
 For example:
 
+```
 --
 (77,63,204)
 -
@@ -47,6 +56,7 @@ For example:
 (2,1) (1,56,37)
 (0,0) (66,20,26)
 (2,2) (15,89,40)
+```
 
 ## How to Run
 
