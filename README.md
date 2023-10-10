@@ -60,6 +60,12 @@ For example:
 
 ## How to Run
 
+To compile the ImageCompressor program, use the make command in the project directory:
+
+```sh
+make
+```
+
 To run the ImageCompressor, use the following command:
 
 ```sh
